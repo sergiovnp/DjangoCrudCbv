@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<br>
+
+<div class="container">
+  <div class="container text-center">
+ 
+    <div class="row align-items-center">
+      <div class="col">
+        <h3>Lista de Personas</h3>
+      </div>
+      <div class="col">
+        <form class="input-group mb-3" action="">
+          <input class="form-control" type="text" name="buscar" placeholder="Apellido">
+          <button class="btn btn-outline-primary">Buscar</button>
+        </form>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+<br>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+          </tr>
+        </thead>
+        <tbody>
+      
+        {% for persona in object_list %}
+        
+          <tr>
+            <th scope="row">{{persona.id}}</th>
+            <td>{{persona.nombre}}</td>
+            <td><a href='' style="text-decoration:none">{{persona.apellido}} </a></td>
+          </tr>
+        {% endfor %}
+       
+        </tbody>
+      </table>
+
+</div>
+
+
+{% endblock %}
