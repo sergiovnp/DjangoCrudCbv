@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
+from django.urls import reverse_lazy
 from .models import Persona
 
 
@@ -18,3 +20,11 @@ class PersonaList(ListView):
 class PersonaDetail(DetailView):
     model = Persona
 
+class PersonaCreate(CreateView):
+    model = Persona
+    fields = ['nombre', 'apellido']
+    def get_success_url(self):
+        return reverse_lazy('persona_list')
+
+
+    

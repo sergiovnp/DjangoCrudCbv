@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 
@@ -20,6 +20,7 @@
         </form>
       </div>
       <div class="col">
+        <a class="btn btn-light" href="{% url 'persona_create' %}" role="button">Crear Persona</a>
       </div>
     </div>
   </div>
