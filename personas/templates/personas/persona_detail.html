@@ -23,8 +23,8 @@
         <br>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a class="btn btn-info" href="{% url 'persona_list' %}" role="button">Listar</a>
-            <a class="btn btn-primary" href="" role="button">Editar</a>
-            <a class="btn btn-danger" href="" role="button">Eliminar</a>
+            <a class="btn btn-primary" href="{% url 'persona_update' persona.id %}" role="button">Editar</a>
+            <a class="btn btn-danger" href="{% url 'persona_delete' persona.id %}" role="button">Eliminar</a>
           </div>
 
 </div>
